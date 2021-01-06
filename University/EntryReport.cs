@@ -16,12 +16,5 @@ namespace University
         {
             InitializeComponent();
         }
-
-        private void EntryReport_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'aliDataSet.مشخصات_طرح' table. You can move, or remove it, as needed.
-            this.مشخصات_طرحTableAdapter.Fill(this.aliDataSet.مشخصات_طرح);
-
-        }
     }
 }

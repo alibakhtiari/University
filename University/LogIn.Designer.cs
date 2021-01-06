@@ -31,8 +31,10 @@ namespace University
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.portalSelect = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.EntryReportOpener = new System.Windows.Forms.Button();
             this.MainWindowOpener = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@ namespace University
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.portalSelect = new System.Windows.Forms.TextBox();
-            this.EntryReportOpener = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,14 @@ namespace University
             this.panel1.Size = new System.Drawing.Size(560, 337);
             this.panel1.TabIndex = 0;
             // 
+            // portalSelect
+            // 
+            this.portalSelect.Location = new System.Drawing.Point(19, 16);
+            this.portalSelect.Name = "portalSelect";
+            this.portalSelect.Size = new System.Drawing.Size(100, 20);
+            this.portalSelect.TabIndex = 16;
+            this.portalSelect.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -72,7 +80,6 @@ namespace University
             this.label3.Size = new System.Drawing.Size(146, 32);
             this.label3.TabIndex = 0;
             this.label3.Text = "انتخاب زیر پرتال";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
             // 
@@ -82,17 +89,33 @@ namespace University
             this.panel2.Controls.Add(this.MainWindowOpener);
             this.panel2.Location = new System.Drawing.Point(19, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(527, 131);
+            this.panel2.Size = new System.Drawing.Size(530, 130);
             this.panel2.TabIndex = 5;
+            // 
+            // EntryReportOpener
+            // 
+            this.EntryReportOpener.Font = new System.Drawing.Font("IRANYekanFN", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.EntryReportOpener.Image = ((System.Drawing.Image)(resources.GetObject("EntryReportOpener.Image")));
+            this.EntryReportOpener.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.EntryReportOpener.Location = new System.Drawing.Point(262, 15);
+            this.EntryReportOpener.Name = "EntryReportOpener";
+            this.EntryReportOpener.Padding = new System.Windows.Forms.Padding(10);
+            this.EntryReportOpener.Size = new System.Drawing.Size(120, 100);
+            this.EntryReportOpener.TabIndex = 16;
+            this.EntryReportOpener.Text = "گزارش ساز";
+            this.EntryReportOpener.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EntryReportOpener.UseVisualStyleBackColor = true;
+            this.EntryReportOpener.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainWindowOpener
             // 
             this.MainWindowOpener.Font = new System.Drawing.Font("IRANYekanFN", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MainWindowOpener.Image = ((System.Drawing.Image)(resources.GetObject("MainWindowOpener.Image")));
             this.MainWindowOpener.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MainWindowOpener.Location = new System.Drawing.Point(410, 22);
+            this.MainWindowOpener.Location = new System.Drawing.Point(391, 15);
             this.MainWindowOpener.Name = "MainWindowOpener";
-            this.MainWindowOpener.Size = new System.Drawing.Size(100, 80);
+            this.MainWindowOpener.Padding = new System.Windows.Forms.Padding(10);
+            this.MainWindowOpener.Size = new System.Drawing.Size(120, 100);
             this.MainWindowOpener.TabIndex = 15;
             this.MainWindowOpener.Text = "مشخصات طرح";
             this.MainWindowOpener.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -105,7 +128,7 @@ namespace University
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("IRANYekanFN", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(180, 272);
+            this.button1.Location = new System.Drawing.Point(180, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 40);
             this.button1.TabIndex = 4;
@@ -115,10 +138,10 @@ namespace University
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox2.Location = new System.Drawing.Point(180, 238);
+            this.textBox2.Font = new System.Drawing.Font("IRANYekanFN", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.textBox2.Location = new System.Drawing.Point(180, 234);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 29);
+            this.textBox2.Size = new System.Drawing.Size(120, 33);
             this.textBox2.TabIndex = 3;
             // 
             // label2
@@ -126,7 +149,7 @@ namespace University
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Font = new System.Drawing.Font("IRANYekanFN", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(310, 238);
+            this.label2.Location = new System.Drawing.Point(310, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 28);
             this.label2.TabIndex = 2;
@@ -134,10 +157,10 @@ namespace University
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox1.Location = new System.Drawing.Point(180, 197);
+            this.textBox1.Font = new System.Drawing.Font("IRANYekanFN", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.textBox1.Location = new System.Drawing.Point(180, 193);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 29);
+            this.textBox1.Size = new System.Drawing.Size(120, 33);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -145,7 +168,7 @@ namespace University
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Font = new System.Drawing.Font("IRANYekanFN", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(310, 197);
+            this.label1.Location = new System.Drawing.Point(310, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 28);
             this.label1.TabIndex = 0;
@@ -160,38 +183,19 @@ namespace University
             this.panel3.Size = new System.Drawing.Size(247, 143);
             this.panel3.TabIndex = 6;
             // 
-            // portalSelect
-            // 
-            this.portalSelect.Location = new System.Drawing.Point(19, 16);
-            this.portalSelect.Name = "portalSelect";
-            this.portalSelect.Size = new System.Drawing.Size(100, 20);
-            this.portalSelect.TabIndex = 16;
-            this.portalSelect.Visible = false;
-            // 
-            // EntryReportOpener
-            // 
-            this.EntryReportOpener.Font = new System.Drawing.Font("IRANYekanFN", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.EntryReportOpener.Image = ((System.Drawing.Image)(resources.GetObject("EntryReportOpener.Image")));
-            this.EntryReportOpener.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EntryReportOpener.Location = new System.Drawing.Point(304, 22);
-            this.EntryReportOpener.Name = "EntryReportOpener";
-            this.EntryReportOpener.Size = new System.Drawing.Size(100, 80);
-            this.EntryReportOpener.TabIndex = 16;
-            this.EntryReportOpener.Text = "گزارش ساز";
-            this.EntryReportOpener.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.EntryReportOpener.UseVisualStyleBackColor = true;
-            this.EntryReportOpener.Click += new System.EventHandler(this.button2_Click);
-            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(584, 365);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "LogIn";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "ورود";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "اتوماسیون ارتباط با صنعت - ورود";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogIn_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
