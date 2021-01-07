@@ -143,6 +143,7 @@ namespace University
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(120, 33);
             this.textBox2.TabIndex = 3;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label2
             // 
@@ -162,6 +163,7 @@ namespace University
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(120, 33);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -195,7 +197,6 @@ namespace University
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اتوماسیون ارتباط با صنعت - ورود";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogIn_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

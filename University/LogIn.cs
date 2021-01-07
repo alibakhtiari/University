@@ -76,7 +76,15 @@ namespace University
             }
         }
 
-        private void LogIn_KeyDown(object sender, KeyEventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LogInNow();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
