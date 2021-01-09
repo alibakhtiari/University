@@ -37,7 +37,7 @@ namespace University
         {
             
             //String str = "Data Source=localhost\\sqlexpress;Initial Catalog=master; Integrated Security=True";
-            String str = "Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Administrator\source\repos\alibakhtiari\University\University\Ali.mdf; Integrated Security = True; Connect Timeout = 30";
+            String str = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\Administrator\\source\repos\alibakhtiari\\University\\University\\Ali.mdf; Integrated Security = True; Connect Timeout = 30";
             SqlConnection con = new SqlConnection(str);
             SqlCommand cmd = new SqlCommand("select * from UserProfile where LogInUser=@LogInUser and LogInPass =@LogInPass", con);
             cmd.Parameters.AddWithValue("@LogInUser", textBox1.Text);
