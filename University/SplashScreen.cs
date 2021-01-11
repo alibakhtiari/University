@@ -17,9 +17,17 @@ namespace University
             InitializeComponent();
         }
 
-        private void SplashScreen_Load(object sender, EventArgs e)
+        private void UpdateTimer_Tick(object sender, EventArgs e)
         {
+            panel2.Width += 3;
+            if(panel2.Width >=600)
+            {
+                UpdateTimer.Stop();
+                LogIn mf = new LogIn();
+                mf.Show();
+                this.Hide();
 
+            }
         }
     }
 }

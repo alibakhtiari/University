@@ -33,14 +33,31 @@ namespace University
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 228);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(12, 308);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 100);
+            this.panel1.Size = new System.Drawing.Size(576, 20);
             this.panel1.TabIndex = 0;
+            // 
+            // UpdateTimer
+            // 
+            this.UpdateTimer.Enabled = true;
+            this.UpdateTimer.Interval = 15;
+            this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(12, 20);
+            this.panel2.TabIndex = 0;
             // 
             // SplashScreen
             // 
@@ -63,7 +80,7 @@ namespace University
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.SplashScreen_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -72,5 +89,6 @@ namespace University
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer UpdateTimer;
+        private System.Windows.Forms.Panel panel2;
     }
 }
