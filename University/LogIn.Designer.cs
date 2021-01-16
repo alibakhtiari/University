@@ -77,6 +77,7 @@ namespace University
             this.label3.Font = new System.Drawing.Font("IRANYekanFN", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.Location = new System.Drawing.Point(206, 8);
             this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(146, 32);
             this.label3.TabIndex = 0;
             this.label3.Text = "انتخاب زیر پرتال";
@@ -191,6 +192,7 @@ namespace University
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 365);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LogIn";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

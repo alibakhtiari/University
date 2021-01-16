@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlServerCe;
 
 namespace University
 {
@@ -23,11 +24,14 @@ namespace University
             string s = (sender as Button).Name;
             portalSelect.Text = s;
             MainWindowOpener.BackColor = Color.Yellow;
+            EntryReportOpener.BackColor = Color.LightGray;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             string s = (sender as Button).Name;
             portalSelect.Text = s;
+            EntryReportOpener.BackColor = Color.Yellow;
+            MainWindowOpener.BackColor = Color.LightGray;            
         }
         private void button1_Click(object sender, EventArgs e) {
             LogInNow();
@@ -35,14 +39,16 @@ namespace University
 
         private void LogInNow()
         {
-            
+
             //String str = "Data Source=localhost\\sqlexpress;Initial Catalog=master; Integrated Security=True";
-            String str = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\Administrator\\source\repos\alibakhtiari\\University\\University\\Ali.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(str);
-            SqlCommand cmd = new SqlCommand("select * from UserProfile where LogInUser=@LogInUser and LogInPass =@LogInPass", con);
+            //String str = "Data Source=d:\\1.sdf; Persist Security Info=False";
+            //SqlCeConnection con = new SqlCeConnection(str);
+            SqlCeConnection con = new SqlCeConnection("Data Source="+ Application.StartupPath + "\\1.sdf; Persist Security Info=False");
+            //SqlCommand cmd = new SqlCommand("select * from UserProfile where LogInUser=@LogInUser and LogInPass =@LogInPass", con);
+            SqlCeCommand cmd = new SqlCeCommand("select * from UserProfile where LogInUser=@LogInUser and LogInPass =@LogInPass", con);
             cmd.Parameters.AddWithValue("@LogInUser", textBox1.Text);
             cmd.Parameters.AddWithValue("@LogInPass", textBox2.Text);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            SqlCeDataAdapter sda = new SqlCeDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             //Connection open here   
@@ -61,7 +67,7 @@ namespace University
                         break;
                     case "EntryReportOpener":
                         this.Hide();
-                        EntryForm f3 = new EntryForm();
+                        EntryReport f3 = new EntryReport();
                         f3.Show();
                         break;
                 }
@@ -98,5 +104,6 @@ namespace University
         {
             Application.Exit();
         }
+
     }
 }

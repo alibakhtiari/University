@@ -26,5 +26,12 @@ namespace University
         {
 
         }
+
+        private void EntryForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                Application.Exit();
+            
+        }
     }
 }
